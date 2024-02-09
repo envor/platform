@@ -2,9 +2,9 @@
 
 namespace Envor\Platform;
 
+use Envor\Platform\Commands\PlatformCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Envor\Platform\Commands\PlatformCommand;
 
 class PlatformServiceProvider extends PackageServiceProvider
 {
