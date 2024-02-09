@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Envor\Platform\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class PlatformCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'platform';
 
     public $description = 'My command';
 
