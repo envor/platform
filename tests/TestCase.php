@@ -2,9 +2,9 @@
 
 namespace Envor\Platform\Tests;
 
+use Envor\Platform\PlatformServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Envor\Platform\PlatformServiceProvider;
 
 class TestCase extends Orchestra
 {
