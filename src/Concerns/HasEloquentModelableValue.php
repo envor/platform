@@ -17,7 +17,7 @@ trait HasEloquentModelableValue
     }
 
     /**
-    * Get a new instance of the model.
+     * Get a new instance of the model.
      */
     public function newModel(): Model
     {
