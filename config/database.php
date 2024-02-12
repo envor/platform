@@ -13,6 +13,6 @@ return [
     |
     */
 
-    'platform' => env('PLATFORM_DB_CONNECTION', 'sqlite'),
+    'platform' => env('PLATFORM_DB_CONNECTION', 'platform_sqlite'),
     'default' => env('DB_CONNECTION', 'sqlite'),
 ];
