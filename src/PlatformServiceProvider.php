@@ -16,6 +16,6 @@ class PlatformServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('platform')
-            ->hasConfigFile(['platform', 'database', 'auth']);
+            ->hasConfigFile(['database', 'auth']);
     }
 }
