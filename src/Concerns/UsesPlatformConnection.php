@@ -6,6 +6,6 @@ trait UsesPlatformConnection
 {
     public function getConnectionName(): string
     {
-        return config('platform.platform_database_connection');
+        return config('database.platform');
     }
 }
