@@ -2,6 +2,22 @@
 
 All notable changes to `platform` will be documented in this file.
 
+## v1.2.1 - 2024-02-12
+
+### What's Changed
+
+* wip by @inmanturbo in https://github.com/envor/platform/pull/4
+
+**Full Changelog**: https://github.com/envor/platform/compare/v1.2.0...v1.2.1
+
+## v1.2.0 - 2024-02-12
+
+### What's Changed
+
+* add some concerns by @inmanturbo in https://github.com/envor/platform/pull/3
+
+**Full Changelog**: https://github.com/envor/platform/compare/v1.0.2...v1.2.0
+
 ## v1.0.3 - 2024-02-11
 
 **Full Changelog**: https://github.com/envor/platform/compare/v1.0.0...v1.0.3
