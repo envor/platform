@@ -21,11 +21,37 @@ You can publish the config file with:
 php artisan vendor:publish --tag="platform-config"
 ```
 
-This is the contents of the published config file:
+This is the contents of the published config file(s):
 
 ```php
+// config/database.php
 return [
-    'platform_database_connection' => env('PLATFORM_DATABASE_CONNECTION', 'platform_sqlite'),
+        /*
+    |--------------------------------------------------------------------------
+    | Default Database Connection Name
+    |--------------------------------------------------------------------------
+    |
+    | Here you may specify which of the database connections below you wish
+    | to use as your default connection for all database work. Of course
+    | you may use many connections at once throughout the application.
+    |
+    */
+
+    'platform' => env('PLATFORM_DB_CONNECTION', 'sqlite'),
+    'default' => env('DB_CONNECTION', 'sqlite'),
+];
+
+// config/auth.php
+return [
+    'passwords' => [
+        'users' => [
+            'provider' => 'users',
+            'table' => 'password_reset_tokens',
+            'connection' => env('PLATFORM_DB_CONNECTION', 'sqlite'),
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+    ],
 ];
 ```
 
