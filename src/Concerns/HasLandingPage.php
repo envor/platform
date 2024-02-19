@@ -10,13 +10,12 @@ use Illuminate\Support\Facades\Storage;
 
 trait HasLandingPage
 {
-
     public function landingPage()
     {
         return $this->morphOne(LandingPage::class, 'model');
     }
 
-        /**
+    /**
      * Update the landing page.
      *
      * @return void
@@ -25,7 +24,7 @@ trait HasLandingPage
     {
         tap($this->landingPagePath(), function ($previous) use ($page) {
             $this->landingPage()->save(LandingPage::forceCreate([
-                'landing_page_path' => $page->storePublicly('landing-pages', ['disk' => $this->landingPageDisk()])
+                'landing_page_path' => $page->storePublicly('landing-pages', ['disk' => $this->landingPageDisk()]),
             ]));
 
             if ($previous) {
@@ -125,7 +124,7 @@ trait HasLandingPage
     /**
      * Use laravel http client to check if domain supports https
      */
-    function preferHttps(string $domainName): string
+    public function preferHttps(string $domainName): string
     {
         try {
             $response = Http::get("https://{$domainName}");
