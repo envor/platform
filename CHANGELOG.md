@@ -2,6 +2,14 @@
 
 All notable changes to `platform` will be documented in this file.
 
+## v1.3.3 - 2024-02-20
+
+### What's Changed
+
+* add landing pages by @inmanturbo in https://github.com/envor/platform/pull/7
+
+**Full Changelog**: https://github.com/envor/platform/compare/v1.3.1...v1.3.3
+
 ## v1.3.2 - 2024-02-20
 
 ### What's Changed

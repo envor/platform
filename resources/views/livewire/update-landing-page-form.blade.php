@@ -6,35 +6,18 @@ use function Livewire\Volt\{state, mount, usesFileUploads};
 
 usesFileUploads();
 
-state(
-    [
-        'model' => null,
-        'landing_page' => null,
-    ]
-);
+state([
+    'landing_page' => null, 
+    'model' => null
+]);
 
-mount(
-    function ($model) {
-
-        $this->model = $model;
-
-        // dd($this->model);
-    }
-);
+mount( fn($model) => $this->model = $model );
 
 $updateLandingPage = function () {
 
-    $this->resetErrorBag();
-
-    $input = [
-        'landing_page' => $this->landing_page,
-    ];
-
     Validator::make(
-        $input,
-        [
-            'landing_page' => ['nullable', 'file', 'mimes:html'],
-        ]
+        [$this->landing_page],
+        ['landing_page' => ['nullable', 'file', 'mimes:html'],]
     )->validate();
 
     if($this->landing_page) {
@@ -56,12 +39,8 @@ $downloadLandingPage = function () {
 
 $deleteLandingPage = function () {
     $this->model->deleteLandingPage();
-
     $this->dispatch('saved');
-};
-
-
-?>
+};?>
 
 
 <x-platform::form-section submit="updateLandingPage">
@@ -124,7 +103,7 @@ $deleteLandingPage = function () {
                     </x-platform::secondary-button>
                 @endif
                 
-                <x-platform::secondary-button-link class="mt-2" target="_blank" href="{{ $this->model->url }}">
+                <x-platform::secondary-button-link class="mt-2" target="_blank" href="{{ $this->model?->url }}">
                     <span>Visit</span>
                 </x-platform::secondary-button-link>
             </div>
