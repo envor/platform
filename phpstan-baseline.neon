@@ -11,6 +11,16 @@ parameters:
 			path: tests/Fixtures/TestModel.php
 
 		-
+			message: "#^Access to an undefined property Envor\\\\Platform\\\\Tests\\\\Fixtures\\\\TestModel\\:\\:\\$name\\.$#"
+			count: 1
+			path: tests/Fixtures/TestModel.php
+
+		-
+			message: "#^Access to an undefined property Envor\\\\Platform\\\\Tests\\\\Fixtures\\\\TestModel\\:\\:\\$profile_photo_path\\.$#"
+			count: 3
+			path: tests/Fixtures/TestModel.php
+
+		-
 			message: "#^Left side of && is always true\\.$#"
 			count: 1
 			path: tests/Fixtures/TestModel.php
@@ -24,3 +34,8 @@ parameters:
 			message: "#^Undefined variable\\: \\$this$#"
 			count: 14
 			path: tests/LandingPageTest.php
+
+		-
+			message: "#^Undefined variable\\: \\$this$#"
+			count: 6
+			path: tests/ProfilePhotoTest.php
