@@ -4,3 +4,23 @@ parameters:
 			message: "#^Call to an undefined method Pest\\\\PendingCalls\\\\TestCall\\:\\:expect\\(\\)\\.$#"
 			count: 1
 			path: tests/ArchTest.php
+
+		-
+			message: "#^Access to an undefined property Envor\\\\Platform\\\\Tests\\\\Fixtures\\\\TestModel\\:\\:\\$landingPage\\.$#"
+			count: 3
+			path: tests/Fixtures/TestModel.php
+
+		-
+			message: "#^Left side of && is always true\\.$#"
+			count: 1
+			path: tests/Fixtures/TestModel.php
+
+		-
+			message: "#^Unreachable statement \\- code above always terminates\\.$#"
+			count: 1
+			path: tests/Fixtures/TestModel.php
+
+		-
+			message: "#^Undefined variable\\: \\$this$#"
+			count: 14
+			path: tests/LandingPageTest.php
