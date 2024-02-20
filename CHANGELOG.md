@@ -2,6 +2,15 @@
 
 All notable changes to `platform` will be documented in this file.
 
+## v1.3.5 - 2024-02-20
+
+### What's Changed
+
+* publish landing page migration by @inmanturbo in https://github.com/envor/platform/pull/9
+* work in progress by @inmanturbo in https://github.com/envor/platform/pull/10
+
+**Full Changelog**: https://github.com/envor/platform/compare/v1.3.4...v1.3.5
+
 ## v1.3.4 - 2024-02-20
 
 ### What's Changed
