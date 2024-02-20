@@ -8,10 +8,16 @@ return new class extends Migration
 {
     public function up()
     {
-        Schema::create('platform_table', function (Blueprint $table) {
+        Schema::create('landing_pages', function (Blueprint $table) {
             $table->id();
 
-            // add fields
+            $table->nullableMorphs('model');
+
+            $table->uuid('uuid')->unique();
+
+            $table->string('name')->nullable();
+
+            $table->string('landing_page_path', 2048)->nullable();
 
             $table->timestamps();
         });

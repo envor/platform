@@ -21,9 +21,10 @@
         "spatie/laravel-package-tools": "^1.16.2"
     },
     "require-dev": {
-        "laravel/pint": "^1.0",
-        "nunomaduro/collision": "*",
         "larastan/larastan": "^2.0.1",
+        "laravel/pint": "^1.0",
+        "livewire/volt": "^1.6",
+        "nunomaduro/collision": "*",
         "orchestra/testbench": "^9.0",
         "pestphp/pest": "^2.20",
         "pestphp/pest-plugin-arch": "^2.5",

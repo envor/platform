@@ -4,6 +4,8 @@ namespace Envor\Platform\Tests;
 
 use Envor\Platform\PlatformServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Livewire\LivewireServiceProvider;
+use Livewire\Volt\VoltServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
@@ -21,16 +23,17 @@ class TestCase extends Orchestra
     {
         return [
             PlatformServiceProvider::class,
+            LivewireServiceProvider::class,
+            VoltServiceProvider::class,
         ];
     }
 
     public function getEnvironmentSetUp($app)
     {
         config()->set('database.default', 'testing');
+        config()->set('database.platform', 'testing');
 
-        /*
-        $migration = include __DIR__.'/../database/migrations/create_platform_table.php.stub';
+        $migration = include __DIR__.'/../database/migrations/platform/create_landing_pages_table.php.stub';
         $migration->up();
-        */
     }
 }
