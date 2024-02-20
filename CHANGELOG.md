@@ -2,6 +2,22 @@
 
 All notable changes to `platform` will be documented in this file.
 
+## v1.3.3 - 2024-02-20
+
+### What's Changed
+
+* add landing pages by @inmanturbo in https://github.com/envor/platform/pull/7
+
+**Full Changelog**: https://github.com/envor/platform/compare/v1.3.1...v1.3.3
+
+## v1.3.2 - 2024-02-20
+
+### What's Changed
+
+* fix env vars, update readme by @inmanturbo in https://github.com/envor/platform/pull/6
+
+**Full Changelog**: https://github.com/envor/platform/compare/v1.3.0...v1.3.2
+
 ## v1.3.1 - 2024-02-19
 
 ### What's Changed
