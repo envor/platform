@@ -17,9 +17,8 @@ beforeEach(function () {
 });
 
 it('can create a landing page', function () {
-    
-    $this->model->updateLandingPage(UploadedFile::fake()->image('landing-page.jpg'));
 
+    $this->model->updateLandingPage(UploadedFile::fake()->image('landing-page.jpg'));
 
     expect($this->model->fresh()->landingPagePath())->not->toBeNull();
 });

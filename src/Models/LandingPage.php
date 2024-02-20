@@ -11,12 +11,12 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
 class LandingPage extends Model
 {
     use HasFactory;
-    use UsesPlatformConnection;
     use HasPlatformUuids;
+    use UsesPlatformConnection;
 
     protected $guarded = [];
 
-    public function model() : MorphTo
+    public function model(): MorphTo
     {
         return $this->morphTo();
     }
