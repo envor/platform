@@ -19,7 +19,7 @@ class PlatformServiceProvider extends PackageServiceProvider
             ->hasViews()
             ->hasRoute('web')
             ->hasMigration('platform/create_landing_pages_table')
-            ->hasConfigFile(['database', 'auth', 'platform']);
+            ->hasConfigFile(['database', 'auth', 'platform', 'session']);
     }
 
     public function packageBooted()
