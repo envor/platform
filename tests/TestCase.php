@@ -4,6 +4,8 @@ namespace Envor\Platform\Tests;
 
 use Envor\Platform\PlatformServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Livewire\LivewireServiceProvider;
+use Livewire\Volt\VoltServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
@@ -21,6 +23,8 @@ class TestCase extends Orchestra
     {
         return [
             PlatformServiceProvider::class,
+            LivewireServiceProvider::class,
+            VoltServiceProvider::class,
         ];
     }
 

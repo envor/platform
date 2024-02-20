@@ -3,6 +3,7 @@
 use Envor\Platform\Tests\Fixtures\TestModel;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Schema;
+use Livewire\Volt\Volt;
 
 beforeEach(function () {
 
@@ -31,10 +32,31 @@ it('can delete a landing page', function () {
     expect($this->model->fresh()->landingPagePath())->toBeNull();
 });
 
-test('a landig page can be viewed', function () {
+test('a landing page can be viewed', function () {
     $this->model->updateLandingPage(UploadedFile::fake()->image('landing-page.jpg'));
 
     $response = $this->get($this->model->fresh()->landing_page_url);
 
     $response->assertStatus(200);
+});
+
+it('can create a landing page using livewire volt', function () {
+
+    // create and html file
+    $uploadedFile = UploadedFile::fake()->create('landing-page.html', 100);
+
+    Volt::test('update-landing-page-form', ['model' => $this->model])
+        ->set('landing_page', $uploadedFile)
+        ->call('updateLandingPage');
+
+    expect($this->model->fresh()->landingPagePath())->not->toBeNull();
+});
+
+it('can delete a landing page using livewire volt', function () {
+    $this->model->updateLandingPage(UploadedFile::fake()->image('landing-page.jpg'));
+
+    Volt::test('update-landing-page-form', ['model' => $this->model])
+        ->call('deleteLandingPage');
+
+    expect($this->model->fresh()->landingPagePath())->toBeNull();
 });
