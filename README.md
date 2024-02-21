@@ -63,7 +63,7 @@ return [
     'empty_logo_path' => 'profile-photos/no_image.jpg',
     'empty_phone' => '(_ _ _) _ _ _- _ _ _ _',
     'empty_fax' => '(_ _ _) _ _ _- _ _ _ _',
-    'logo_path' => env('PLATFORM_LOGO_PATH'), //resource_path('legacy/qwoffice/print/DigLogo.jpg'
+    'logo_path' => env('PLATFORM_LOGO_PATH'),
     'name' => env('PLATFORM_NAME'),
     'phone' => env('PLATFORM_PHONE_NUMBER'),
     'fax' => env('PLATFORM_FAX_NUMBER'),
