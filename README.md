@@ -82,6 +82,157 @@ return [
 
 ```
 
+## Usage
+
+### Landing Pages
+
+Allows a model to have an html "landing page", which can be updoaded, deleted and replaced by the user.
+
+1. publish and run migration
+
+This will create a `landing_pages` table where landing page paths and relationship info will be stored.
+
+```bash
+php artisan vendor:publish --tag='platform-migrations'
+```
+
+```bash
+php artisan migrate
+```
+
+2. Add `\Envor\Platform\HasLandingPage` trait to your model.
+
+It can be any model but we will use the user model as an example:
+
+```php
+
+...
+class User extends Authenticatable
+{
+    ...
+    use \Envor\Platform\HasLandingPage;
+    ...
+}
+```
+
+Usage example
+
+```php
+$user->updateLandingPage($request->file('landing-page'));
+```
+
+```blade
+<a href="{{ $user->url }}">Visit Landing Page</a>
+```
+
+3. Use the form (optional)
+
+> [!NOTE]  
+> Requires livewire/volt and tailwind.
+
+```bash
+composer require livewire/volt
+```
+
+```bash
+php artisan volt:install
+```
+
+Now you can add the form to any view:
+
+```blade
+@livewire('update-landing-page-form', ['model' => auth()->user()])
+```
+
+Screenshot:
+
+![alt text](docs/img/update-landing-page-form.png)
+
+4. Make The landing page the home page (optional)
+
+In this example we will illustrate how it might be done for a user which has a `domain` property.
+
+Add domain field to users table in a migration:
+
+```php
+$table->string('domain')->nullable();
+```
+
+```php
+use Illuminate\Http\Request;
+
+Route::get('/', function (Request $request) {
+
+    $user = \App\Models\User::where('domain', $request->getHost())->first();
+
+    if ($user?->landing_page) {
+        return response()->file(Storage::disk($user->landingPageDisk())->path($user->landingPagePath()));
+    }
+
+    return view('welcome');
+
+})->name('home');
+
+```
+
+### Contact Info
+
+Allows a model to have address and other contact details
+
+1. Add contact data text (or json) field to your model's database table
+
+```php
+$table->text('contact_data')->nullable();
+```
+
+2. Add `\Envor\Platform\HasContactData` trait to your model.
+
+It can be any model but we will use the user model as an example:
+
+```php
+...
+class User extends Authenticatable
+{
+    ...
+    use \Envor\Platform\HasContactData;
+    ...
+}
+```
+
+Usage example
+
+```php
+$user->updateContactData([
+    'name' => 'Jane Doe',
+    'address' => [
+        '1234 somewhere lane'
+    ];
+]);
+```
+
+3. Use form (optional)
+
+> [!NOTE]  
+> Requires livewire/volt and tailwind.
+
+```bash
+composer require livewire/volt
+```
+
+```bash
+php artisan volt:install
+```
+
+Now you can add the form to any view:
+
+```blade
+@livewire('update-contact-info-form', ['model' => $user, 'readonly' => $user->id != auth()->id()])
+```
+
+Screenshot:
+
+![alt text](docs/img/update-contact-info-form.png)
+
 ## Testing
 
 ```bash
