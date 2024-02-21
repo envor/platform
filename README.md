@@ -84,9 +84,96 @@ return [
 
 ## Usage
 
+### Using the platform connection
+
+Add the trait `Envor\Platform\UsesPlatformConnection` to your model:
+
+```php
+class Business extends Model
+{
+    use \Envor\Platform\UsesPlatformConnection;
+}
+```
+
+### Using Platform UUID's
+
+Add the `uuid` column to your model's table in a migration:
+
+```php
+$table->uuid('uuid')->index()->unique();
+```
+
+Add the trait `Envor\Platform\UsesPlatformUuids` to your model:
+
+```php
+class Business extends Model
+{
+    use \Envor\Platform\HasPlatformUuids;
+}
+```
+
+
+### Logos
+
+Allows a model to have a logo, which can be updoaded, deleted and replaced by the user.
+
+1. Add `profile_photo_path` (string) field to your model's database table
+
+```php
+$table->text('profile_photo_path')->nullable();
+```
+
+2. Add `\Envor\Platform\HasProfilePhoto` trait to your model.
+
+It can be any model but we will use the user model as an example.
+
+```php
+
+...
+class User extends Authenticatable
+{
+    ...
+    use \Envor\Platform\HasProfilePhoto;
+    ...
+}
+```
+
+Usage example
+
+```php
+$user->updateProfilePhoto($request->file('photo'));
+```
+
+```blade
+<img src="{{ $user->profile_photo_url }}" alt="{{ $user->name }}" class="rounded-full h-20 w-20 object-cover">
+```
+
+3. Use the form (optional)
+
+> [!NOTE]  
+> Requires livewire/volt and tailwind.
+
+```bash
+composer require livewire/volt
+```
+
+```bash
+php artisan volt:install
+```
+
+Now you can add the form to any view:
+
+```blade
+@livewire('update-logo-form', ['model' => auth()->user()])
+```
+
+Screenshot:
+
+![alt text](docs/img/update-logo-form.png)
+
 ### Landing Pages
 
-Allows a model to have an html "landing page", which can be updoaded, deleted and replaced by the user.
+Allows a model to have an html "landing page", which can be uploaded, deleted and replaced by the user.
 
 1. publish and run migration
 
@@ -157,6 +244,8 @@ Add domain field to users table in a migration:
 ```php
 $table->string('domain')->nullable();
 ```
+
+Then show the page on the home '/' route:
 
 ```php
 use Illuminate\Http\Request;
