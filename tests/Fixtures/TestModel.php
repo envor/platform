@@ -10,7 +10,7 @@ class TestModel extends \Illuminate\Database\Eloquent\Model
 {
     protected $guarded = [];
 
+    use HasContactData;
     use HasLandingPage;
     use HasProfilePhoto;
-    use HasContactData;
 }

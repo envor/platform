@@ -6,13 +6,18 @@ parameters:
 			path: tests/ArchTest.php
 
 		-
+			message: "#^Undefined variable\\: \\$this$#"
+			count: 31
+			path: tests/ContactDataTest.php
+
+		-
 			message: "#^Access to an undefined property Envor\\\\Platform\\\\Tests\\\\Fixtures\\\\TestModel\\:\\:\\$landingPage\\.$#"
 			count: 3
 			path: tests/Fixtures/TestModel.php
 
 		-
 			message: "#^Access to an undefined property Envor\\\\Platform\\\\Tests\\\\Fixtures\\\\TestModel\\:\\:\\$name\\.$#"
-			count: 1
+			count: 2
 			path: tests/Fixtures/TestModel.php
 
 		-

@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Casts\Attribute;
 
 trait HasContactData
 {
-
     public function contactData(): Attribute
     {
         return new Attribute(
@@ -25,7 +24,7 @@ trait HasContactData
 
         $newContactData = is_string($newContactData) ? json_decode($newContactData, true) : $newContactData;
 
-        if(isset($newContactData['address']) && isset($originalContactData['address'])) {
+        if (isset($newContactData['address']) && isset($originalContactData['address'])) {
             $newContactData['address'] = array_merge((array) $originalContactData['address'], $newContactData['address']);
         }
 
@@ -36,7 +35,7 @@ trait HasContactData
 
     public function updateContactData(array|string|ContactData $contactData): bool
     {
-       return $this->update([
+        return $this->update([
             'contact_data' => $contactData,
         ]);
     }
@@ -44,7 +43,7 @@ trait HasContactData
     public function getContactData($attributes): ?ContactData
     {
 
-        if (!config('platform.stores_contact_info')) {
+        if (! config('platform.stores_contact_info')) {
             return null;
         }
 

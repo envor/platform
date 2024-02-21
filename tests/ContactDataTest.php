@@ -17,7 +17,6 @@ beforeEach(function () {
 
 it('can update contact data', function () {
 
-
     $this->model->updateContactData([
         'name' => 'John Doe',
         'email' => 'me@test.com',
