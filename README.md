@@ -184,7 +184,7 @@ php artisan vendor:publish --tag='platform-migrations'
 ```
 
 ```bash
-php artisan migrate
+php artisan migrate --path=database/migrations/platform
 ```
 
 2. Add `\Envor\Platform\HasLandingPage` trait to your model.
