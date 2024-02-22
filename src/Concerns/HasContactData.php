@@ -59,11 +59,11 @@ trait HasContactData
         );
 
         return new ContactData(
-            name: $companyData['name'] ?? $this->name,
+            name: $companyData['name'] ?? $attributes['name'] ?? null,
             landingPage: $companyData['landingPage'] ?? null,
             address: $address,
-            logoUrl: $this->profile_photo_url ?? config('platform.logo_path'),
-            logoPath: $this->profile_photo_path ?? config('platform.empty_logo_path'),
+            logoUrl: null,
+            logoPath: null,
             phone: $companyData['phone'] ?? config('platform.empty_phone'),
             fax: $companyData['fax'] ?? config('platform.empty_phone'),
             email: $companyData['email'] ?? null,
