@@ -73,7 +73,7 @@ $updateContactData = function () {
                             type="text"
                             class="block w-full mt-1"
                             wire:model.defer="data.name"
-                            :disabled="! $this->readonly" />
+                            :disabled="$this->readonly" />
 
                 <x-platform::input-error for="name" class="mt-2" />
             </div>
@@ -86,7 +86,7 @@ $updateContactData = function () {
                             type="text"
                             class="block w-full mt-1"
                             wire:model.defer="data.phone"
-                            :disabled="! $this->readonly" />
+                            :disabled="$this->readonly" />
 
                 <x-platform::input-error for="phone" class="mt-2" />
             </div>
@@ -99,7 +99,7 @@ $updateContactData = function () {
                             type="text"
                             class="block w-full mt-1"
                             wire:model.defer="data.fax"
-                            :disabled="! $this->readonly" />
+                            :disabled="$this->readonly" />
 
                 <x-platform::input-error for="fax" class="mt-2" />
             </div>
@@ -111,7 +111,7 @@ $updateContactData = function () {
                             type="text"
                             class="block w-full mt-1"
                             wire:model.defer="data.email"
-                            :disabled="! $this->readonly" />
+                            :disabled="$this->readonly" />
 
                 <x-platform::input-error for="email" class="mt-2" />
             </div>
@@ -125,7 +125,7 @@ $updateContactData = function () {
                             type="text"
                             class="block w-full mt-1"
                             wire:model.defer="data.address.street"
-                            :disabled="! $this->readonly" />
+                            :disabled="$this->readonly" />
 
                 <x-platform::input-error for="street" class="mt-2" />
             </div>
@@ -137,7 +137,7 @@ $updateContactData = function () {
                             type="text"
                             class="block w-full mt-1"
                             wire:model.defer="data.address.lineTwo"
-                            :disabled="! $this->readonly" />
+                            :disabled="$this->readonly" />
 
                 <x-platform::input-error for="lineTwo" class="mt-2" />
             </div>
@@ -150,7 +150,7 @@ $updateContactData = function () {
                             type="text"
                             class="block w-full mt-1"
                             wire:model.defer="data.address.city"
-                            :disabled="! $this->readonly" />
+                            :disabled="$this->readonly" />
 
                 <x-platform::input-error for="city" class="mt-2" />
             </div>
@@ -163,7 +163,7 @@ $updateContactData = function () {
                             type="text"
                             class="block w-full mt-1"
                             wire:model.defer="data.address.state"
-                            :disabled="! $this->readonly" />
+                            :disabled="$this->readonly" />
 
                 <x-platform::input-error for="state" class="mt-2" />
 
@@ -177,7 +177,7 @@ $updateContactData = function () {
                             type="text"
                             class="block w-full mt-1"
                             wire:model.defer="data.address.zip"
-                            :disabled="! $this->readonly" />
+                            :disabled="$this->readonly" />
 
                 <x-platform::input-error for="zip" class="mt-2" />
 
@@ -191,7 +191,7 @@ $updateContactData = function () {
                             type="text"
                             class="block w-full mt-1"
                             wire:model.defer="data.address.country"
-                            :disabled="! $this->readonly" />
+                            :disabled="$this->readonly" />
 
                 <x-platform::input-error for="country" class="mt-2" />
 
@@ -200,7 +200,7 @@ $updateContactData = function () {
 
         </x-slot>
 
-        @if ($this->readonly)
+        @if (! $this->readonly)
             <x-slot name="actions">
                 <x-platform::action-message class="mr-3" on="saved">
                     {{ __('Saved.') }}
