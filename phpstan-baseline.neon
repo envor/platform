@@ -44,3 +44,8 @@ parameters:
 			message: "#^Undefined variable\\: \\$this$#"
 			count: 6
 			path: tests/ProfilePhotoTest.php
+
+		-
+			message: "#^Undefined variable\\: \\$this$#"
+			count: 5
+			path: tests/UpdateModelDomainTest.php
