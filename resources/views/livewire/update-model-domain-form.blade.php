@@ -13,7 +13,7 @@ mount(function ($model) {
         $this->model = $model;
 
         $this->data['domain'] = $model->domain;
-}
+};
 
 $updateModelDomain = function () {
 
