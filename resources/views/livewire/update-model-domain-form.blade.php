@@ -8,7 +8,12 @@ state([
     'readonly' => true,
 ]);
 
-mount(fn ($model) => $this->model = $model);
+mount(function ($model) {
+        
+        $this->model = $model;
+
+        $this->data['domain'] = $model->domain;
+});
 
 $updateModelDomain = function () {
 
