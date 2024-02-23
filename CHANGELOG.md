@@ -2,6 +2,15 @@
 
 All notable changes to `platform` will be documented in this file.
 
+## v1.5.1 - 2024-02-23
+
+### What's Changed
+
+* update domain form by @inmanturbo in https://github.com/envor/platform/pull/17
+* fix phpstan by @inmanturbo in https://github.com/envor/platform/pull/18
+
+**Full Changelog**: https://github.com/envor/platform/compare/v1.5.0...v1.5.1
+
 ## v1.5.0 - 2024-02-22
 
 ### What's Changed
