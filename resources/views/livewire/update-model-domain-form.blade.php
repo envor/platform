@@ -18,6 +18,7 @@ mount(function ($model) {
 $updateModelDomain = function () {
 
     if($this->readonly) return;
+    $this->authorize('update-domain', $model);
 
     $this->resetErrorBag();
     $input = $this->data;
