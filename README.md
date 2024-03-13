@@ -254,7 +254,7 @@ Route::get('/', function (Request $request) {
 
     $user = \App\Models\User::where('domain', $request->getHost())->first();
 
-    if ($user?->landing_page) {
+    if ($user?->landingPage) {
         return response()->file(Storage::disk($user->landingPageDisk())->path($user->landingPagePath()));
     }
 

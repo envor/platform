@@ -2,6 +2,14 @@
 
 All notable changes to `platform` will be documented in this file.
 
+## v1.5.2 - 2024-02-23
+
+### What's Changed
+
+* set domain on model at mount by @inmanturbo in https://github.com/envor/platform/pull/19
+
+**Full Changelog**: https://github.com/envor/platform/compare/v1.5.1...v1.5.2
+
 ## v1.5.1 - 2024-02-23
 
 ### What's Changed
