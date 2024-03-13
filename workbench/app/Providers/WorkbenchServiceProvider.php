@@ -25,7 +25,6 @@ class WorkbenchServiceProvider extends ServiceProvider
             return true;
         });
 
-
         Route::view('/', 'welcome');
     }
 }
