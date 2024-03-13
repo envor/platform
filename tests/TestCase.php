@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use Livewire\LivewireServiceProvider;
 use Livewire\Volt\VoltServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
+use Workbench\App\Providers\WorkbenchServiceProvider;
 
 class TestCase extends Orchestra
 {
@@ -25,6 +26,7 @@ class TestCase extends Orchestra
             PlatformServiceProvider::class,
             LivewireServiceProvider::class,
             VoltServiceProvider::class,
+            WorkbenchServiceProvider::class,
         ];
     }
 

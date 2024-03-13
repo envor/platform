@@ -21,7 +21,10 @@ class WorkbenchServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        Gate::before(fn ($user, $ability) => true);
+        Gate::before(function (mixed $user, string $ability) {
+            return true;
+        });
+
 
         Route::view('/', 'welcome');
     }
