@@ -34,6 +34,7 @@ class TestCase extends Orchestra
     {
         config()->set('database.default', 'testing');
         config()->set('database.platform', 'testing');
+        config()->set('data.throw_when_max_transformation_depth_reached', true);
 
         $migration = include __DIR__.'/../database/migrations/platform/create_landing_pages_table.php.stub';
         $migration->up();
