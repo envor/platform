@@ -4,6 +4,7 @@ namespace Envor\Platform\Tests;
 
 use Envor\Platform\PlatformServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Facades\Gate;
 use Livewire\LivewireServiceProvider;
 use Livewire\Volt\VoltServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
@@ -30,6 +31,8 @@ class TestCase extends Orchestra
 
     public function getEnvironmentSetUp($app)
     {
+        Gate::before(fn ($user, $ability) => true);
+
         config()->set('database.default', 'testing');
         config()->set('database.platform', 'testing');
 
