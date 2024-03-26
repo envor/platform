@@ -27,7 +27,7 @@ class PlatformServiceProvider extends PackageServiceProvider
 
         $this->app->booted(function () {
 
-            if (class_exists('\Livewire\Volt\Volt') && (!$this->app->runningInConsole() || $this->app->runningUnitTests()) {
+            if (class_exists('\Livewire\Volt\Volt') && (!$this->app->runningInConsole() || $this->app->runningUnitTests())) {
                 $paths = [
                     __DIR__.'/../resources/views/livewire',
                     __DIR__.'/../resources/views/pages',
