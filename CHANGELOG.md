@@ -2,6 +2,15 @@
 
 All notable changes to `platform` will be documented in this file.
 
+## v1.6.1 - 2024-03-26
+
+### What's Changed
+
+* Bump dependabot/fetch-metadata from 1.6.0 to 2.0.0 by @dependabot in https://github.com/envor/platform/pull/22
+* dont take over volt cli by @inmanturbo in https://github.com/envor/platform/pull/23
+
+**Full Changelog**: https://github.com/envor/platform/compare/v1.6.0...v1.6.1
+
 ## v1.6.0 - 2024-03-13
 
 ### What's Changed
