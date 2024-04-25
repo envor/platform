@@ -2,6 +2,10 @@
 
 All notable changes to `platform` will be documented in this file.
 
+## v1.6.3 - 2024-04-25
+
+**Full Changelog**: https://github.com/envor/platform/compare/v1.6.2...v1.6.3
+
 ## v1.6.2 - 2024-04-25
 
 ### What's Changed
