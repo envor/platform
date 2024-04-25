@@ -93,7 +93,7 @@ $deleteLandingPage = function () {
                     <span>{{ __('Replace') }}</span>
                 </x-platform::secondary-button>
                 
-                @if ($this->model?->landing_page)
+                @if ($this->model?->landingPage()->exists())
                     <x-platform::secondary-button type="button" class="mt-2 mr-2" wire:click="downloadLandingPage" x-on:click="pagePreview=false" >
                         <span>{{ __('Download') }}</span>
                     </x-platform::secondary-button>
