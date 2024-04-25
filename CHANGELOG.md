@@ -2,6 +2,25 @@
 
 All notable changes to `platform` will be documented in this file.
 
+## v1.6.3 - 2024-04-25
+
+**Full Changelog**: https://github.com/envor/platform/compare/v1.6.2...v1.6.3
+
+## v1.6.2 - 2024-04-25
+
+### What's Changed
+
+* Bump aglipanci/laravel-pint-action from 2.3.1 to 2.4 by @dependabot in https://github.com/envor/platform/pull/24
+
+**Full Changelog**: https://github.com/envor/platform/compare/v1.6.1...v1.6.2
+
+### What's Changed
+
+* Bump aglipanci/laravel-pint-action from 2.3.1 to 2.4 by @dependabot in https://github.com/envor/platform/pull/24
+* fix relations in landing page by @inmanturbo in https://github.com/envor/platform/pull/25
+
+**Full Changelog**: https://github.com/envor/platform/compare/v1.6.1...v1.6.2
+
 ## v1.6.1 - 2024-03-26
 
 ### What's Changed
