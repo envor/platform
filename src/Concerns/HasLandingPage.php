@@ -23,13 +23,12 @@ trait HasLandingPage
     public function updateLandingPage(UploadedFile $page)
     {
         tap($this->landingPagePath(), function ($previous) use ($page) {
+
+            $this->deleteLandingPage();
+
             $this->landingPage()->save(LandingPage::forceCreate([
                 'landing_page_path' => $page->storePublicly('landing-pages', ['disk' => $this->landingPageDisk()]),
             ]));
-
-            if ($previous) {
-                Storage::disk($this->landingPageDisk())->delete($previous);
-            }
         });
     }
 
@@ -51,9 +50,7 @@ trait HasLandingPage
 
         Storage::disk($this->landingPageDisk())->delete($this->landingPagePath());
 
-        $this->landingPage->forceFill([
-            'landing_page_path' => null,
-        ])->save();
+        $this->landingPage()->delete();
     }
 
     /**

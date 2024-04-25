@@ -12,7 +12,7 @@ parameters:
 
 		-
 			message: "#^Access to an undefined property Envor\\\\Platform\\\\Tests\\\\Fixtures\\\\TestModel\\:\\:\\$landingPage\\.$#"
-			count: 3
+			count: 2
 			path: tests/Fixtures/TestModel.php
 
 		-
